@@ -1,0 +1,77 @@
+1. How to create and delete a database: 
+	a. CREATE DATABASE test;
+	b. DROP DATABASE test;
+
+2. Creating a database to work with:
+	a. CREATE DATABASE Bahaa;
+
+3. Create a table inside that databse: 
+	CREATE TABLE customers(  	# creating a table with the row title ‘customers’ 
+	id INT NOT NULL AUTO_INCREMENT,   # The column ‘id’ which carries int value and can’t be empty
+	first_name VARCHAR(255),  # the first name column w/ varchar is the data type and the maximum length of characters is (255)
+	last_name VARCHAR(255),
+	email VARCHAR(255), 
+	address VARCHAR(255),
+	city VARCHAR(255),
+	town/state VARCHAR(255),
+	zipcode VARCHAR(255),
+	PRIMARY KEY(id) # the primary key is unique and we want id to be unique 
+	);
+
+4. How to insert data into the table:
+    INSERT INTO customers(first_name, last_name, email, address, city, town, zipcode)
+    VALUES
+    (‘Bahaa’, ‘Shammary’, ‘bshammary@gmail.ie’, ’22 high st’, ‘Cork’, ‘Douglas’, ‘T9A5’),
+    (‘Derek’, ‘Williams’, ‘dwilliams@gmail.ie’, ’23 high st’, ‘Limerick’, ‘Abbeyfeale’, ‘T10A5’),
+    (‘Michael’, ‘Murph’, ‘m.murph@gmail.ie’, ’24 high st’, ‘Cork’, ‘Douglas, ‘T11A5’),
+    (‘Kathy’, ‘Morris’, ‘kathym@gmail.ie’, ’25 high st’, ‘Cork’, ‘Kinsale’, ‘T12A5’);
+    (‘Kate’, ‘Murphy’, ‘kmurph@gmail.ie’, ’26 high st’, ‘Kerry’, ‘Tralee’, ‘T13A5’);
+    (‘Johnny’, ‘Davidson’, ‘jdavidson@gmail.ie’, ’27 high st’, ‘Kilkenny’, ‘Callan’, ‘T14A5’);
+    # first, we declare which column we would like to add the data into, and we declare that
+    # only once. then we write the corresponding values we would like inside each of those columns
+    
+5.	How to update a record (i.e. a customer wanting to change their email address):
+    a.	UPDATE customers
+    SET email = ‘test@gmail.com’  # the change we want
+    WHERE id =3;  		 # to which row it will affect
+
+6.	How to delete an entire row (deleting a customer):
+    DELETE FROM customers
+    WHERE id = 5;             # here you can delete by id but you can choose other column names
+
+7.	ALTERING A TABLE (i.e. adding a column)
+    a.	ALTER TABLE customers ADD COLUMN newColumn VARCHAR(255);
+    b.	ALTER TABLE customers ADD COLUMN age INT;  # we will need this later for select
+
+    c.	Changing a column’s data type:
+    ALTER TABLE customers
+    MODIFY COLUMN newColumn INT(11);  # changing column’s data type from varchar to int 
+
+8.	Deleting a column from a table:
+    ALTER TABLE customers
+    DROP COLUMN newColumn;
+
+9.	Selecting from a table: 
+    SELECT * FROM customers;    # selecting all from the table
+    SELECT first_name, last_name FROM customers;    # selecting specific columns from table
+    SELECT * FROM customers WHERE first_name = ‘Bahaa’;   # selecting a specific customer 
+    SELECT * FROM customers ORDER BY last_name;  # sorting order of all the data by last name
+    SELECT * FROM customers ORDER BY last_name DESC; # sorting last name in desc order
+    SELECT * FROM customers ORDER BY last_name ASC; # sorting last name in ascending order
+    SELECT city FROM customers;  	# getting all cities
+    SELECT DISTINCT city FROM customers;   # by adding ‘DISTINCT’, we remove duplicates
+
+10.	Selecting from a table (numbers)
+    a.	SELECT * FROM customers WHERE age < 30;	
+    b.	Wanting customers age between 22 and 40 (using BETWEEN): 
+        SELECT * FROM customers WHERE age BETWEEN 22 AND 40;
+    c.	Using LIKE: 
+        SELECT * FROM customers WHERE city LIKE ‘%C%’; #‘%’ means anything before and after c 
+    d.	Using NOT LIKE:
+        SELECT * FROM customers WHERE city NOT LIKE ‘%C%’;  # anything that doesn’t have c 
+    e.	Using IN:
+        SELECT * FROM customers WHERE town IN (‘Douglas’, ‘Kinsale’);
+
+
+
+
