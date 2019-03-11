@@ -1,0 +1,124 @@
+CREATE TABLE Team
+
+	(
+team_id INT NOT NULL AUTO_INCREMENT,
+
+	team_name VARCHAR(25),
+
+	
+manager_name VARCHAR(25),
+
+  
+	city VARCHAR(15),
+	
+games_played INT,
+
+	win INT,
+
+	draw INT,
+
+	lost INT,
+	
+goals_for INT,
+	goals_against INT,
+
+	
+points INT NOT NULL,
+
+PRIMARY KEY (team_id)
+
+);
+
+
+CREATE TABLE Player_Statistics
+(
+
+	stat_id INT NOT NULL AUTO_INCREMENT,
+
+	goals INT,
+  
+	assists INT,
+
+	yellow_cards INT,
+
+	red_cards INT,
+	PRIMARY KEY (stat_id)
+);
+
+CREATE TABLE Players
+(
+
+	player_id INT NOT NULL AUTO_INCREMENT,
+
+	first_name VARCHAR(15) NOT NULL,
+	last_name VARCHAR(15) NOT NULL,
+	age INT,
+  
+	position VARCHAR(5),
+	nationality VARCHAR(20),
+
+	jersery_no INT,
+
+	team_id INT,   
+	stat_id INT,  
+PRIMARY KEY (player_id),
+  
+FOREIGN KEY (team_id) REFERENCES Team(team_id),
+  
+FOREIGN KEY (stat_id) REFERENCES Player_Statistics(stat_id)
+);
+
+CREATE TABLE Referee
+(
+	referee_id INT NOT NULL AUTO_INCREMENT,
+	first_name VARCHAR(20) NOT NULL,
+
+	last_name VARCHAR(20) NOT NULL,
+
+	age INT NOT NULL,
+
+	nationality VARCHAR(25) NOT NULL,
+
+PRIMARY KEY (referee_id)
+);
+
+CREATE TABLE Fixtures
+(
+
+	match_no INT NOT NULL AUTO_INCREMENT,
+	match_date DATE,
+	match_time TIME,
+
+	Win_Draw CHAR,
+	goal_score VARCHAR(10),
+	referee_id INT,
+
+PRIMARY KEY (match_no),
+
+FOREIGN KEY (referee_id) REFERENCES referee(referee_id)
+);
+
+CREATE TABLE TeamFixturesRelation
+(
+
+	match_no INT NOT NULL,
+
+	team_id INT NOT NULL,
+	win_lose_draw CHAR NOT NULL,
+
+	goal_score INT NOT NULL,
+
+	home_away VARCHAR(4) NOT NULL,
+
+PRIMARY KEY (match_no, team_id),
+  
+FOREIGN KEY (match_no) REFERENCES fixtures(match_no),
+  
+FOREIGN KEY (team_id) REFERENCES team(team_id)
+);
+
+
+
+Commit;
+
+

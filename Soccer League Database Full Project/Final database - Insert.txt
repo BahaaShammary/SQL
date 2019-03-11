@@ -1,0 +1,150 @@
+#TEAM INSERT
+INSERT INTO team VALUES(101, 'FC Barcelona', 'Ernesto Velverde', 'Barcelona', 6, 3, 2, 1, 12, 21, 10);
+
+INSERT INTO team VALUES(102, 'Alaves', 'Abelardo Fernandez', 'Vitoria-Gasteiz', 6, 2, 2, 2, 9, 20, 10);
+
+INSERT INTO team VALUES(103, 'Sevilla', 'Pablo machin', 'Seville', 6, 3, 1, 2, 9, 19, 10);
+
+INSERT INTO team VALUES(104, 'Atletico Madrid', 'Diego Simeone', 'Madrid', 5, 1, 4, 0, 9, 19, 10);
+INSERT INTO team VALUES(105, 'Real Madrid', 'Santiago Solari', 'Madrid', 5, 3, 0, 2, 9, 14, 10);
+
+INSERT INTO team VALUES(106, 'Espanyol', 'Rubi', 'Barcelona', 5, 2, 3, 0, 9, 18, 10);
+
+
+
+#PLAYER STATISTICS INSERT
+INSERT INTO player_statistics 
+VALUES
+(1, 9, 5, 0, 0);
+INSERT INTO player_statistics 
+VALUES
+(2, 9, 4, 0, 0);
+
+INSERT INTO player_statistics 
+VALUES
+(3, 4, 0, 0, 0);
+
+INSERT INTO player_statistics 
+VALUES
+(4, 3, 4, 3, 1);
+
+INSERT INTO player_statistics 
+VALUES
+(5, 7, 0, 0, 0);
+
+INSERT INTO player_statistics 
+VALUES
+(6, 7, 2, 1, 0);
+
+
+#PLAYER INSERT
+INSERT INTO players VALUES
+(01, 'Lionel', 'Messi', 31, 'RW', 'Argentina', 10, 101, 1);
+INSERT INTO players VALUES
+(2, 'Luis', 'Suarez', 31, 'ST', 'Uruguay', 9, 101, 2);
+INSERT INTO players VALUES
+(3, 'Sergio', 'Ramos', 32, 'CB', 'Spain', 4, 105, 3);
+
+INSERT INTO players VALUES
+(4, 'Antoine', 'Griezmann', 27, 'CF', 'France', 7, 104, 4);
+
+INSERT INTO players VALUES
+(5, 'Silva', 'Andre', 23, 'ST', 'Portugal', 12, 103, 5);
+
+INSERT INTO players VALUES
+(6, 'Borja', 'Iglesias', 25, 'ST', 'Spain', 7, 106, 6);
+
+
+#FIXTURES INSERT
+INSERT INTO fixtures VALUES
+(1, '2018/08/18', '13:00', 'W', '3-1', 1001);
+
+INSERT INTO fixtures VALUES
+(2, '2018/08/18', '17:00', 'W', '2-0', 1002);
+
+INSERT INTO fixtures VALUES
+(3, '2018/08/25', '20:00', 'W', '5-0', 1004);
+
+INSERT INTO fixtures VALUES
+(4, '2018/08/25', '19:30', 'W', '3-1', 1001);
+
+INSERT INTO fixtures VALUES
+(5, '2018/08/25', '19:30', 'D', '2-2', 1005);
+
+INSERT INTO fixtures VALUES
+(6, '2018/08/25', '20:30', 'D', '1-1', 1006);
+
+
+#REFEREE INSERT
+INSERT INTO referee 
+VALUES
+(1001, 'Javier', 'Rojas', 35, 'Spain');
+
+INSERT INTO referee 
+VALUES
+(1002, 'Javier', 'Fernandez', 40, 'Spain');
+
+INSERT INTO referee 
+VALUES
+(1003, 'Guillermo', 'Fernandez', 45, 'Spain');
+
+INSERT INTO referee 
+VALUES
+(1004, 'Alejandro', 'Hernandez', 35, 'Spain');
+
+INSERT INTO referee 
+VALUES
+(1005, 'David', 'Jimenez', 30, 'Spain');
+
+INSERT INTO referee 
+VALUES
+(1006, 'Jose', 'Sanchez', 35, 'Spain');
+
+
+#TEAM FIXTURES RELATION INSERT
+INSERT INTO teamfixturesrelation 
+VALUES
+(1, 101, 'W', 3, 'Home');
+INSERT INTO teamfixturesrelation 
+VALUES
+(1, 102, 'L', 1, 'Away');
+INSERT INTO teamfixturesrelation 
+VALUES
+(2, 103, 'W', 2, 'Home');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(2, 104, 'L', 0, 'Away');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(3, 105, 'W', 5, 'Home');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(3, 106, 'L', 0, 'Away');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(4, 101, 'W', 3, 'Home');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(4, 105, 'L', 1, 'Away');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(5, 105, 'D', 2, 'Home');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(5, 104, 'D', 2, 'Away');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(6, 101, 'D', 1, 'Away');
+
+INSERT INTO teamfixturesrelation 
+VALUES
+(6, 104, 'D', 1, 'Home');
+
